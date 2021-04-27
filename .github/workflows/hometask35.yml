@@ -42,7 +42,10 @@ jobs:
           pip install -r requirements.txt
            
       - name: Run a one-line test
-        run: python manage.py test
+        run: | 
+          python manage.py test
+          pytest -s -vv
+
          
   deploy:
     # The type of runner that the job will run on
