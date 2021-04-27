@@ -36,12 +36,18 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          
 
       # Runs a single command using the runners shell
-      - name: Check files list
-        run: |
-          pwd
-          ls -al
+      #- name: Check files list
+      #  run: |
+      #    pwd
+      #    ls -al
                  
       - name: Run a one-line test
         run: python manage.py test
